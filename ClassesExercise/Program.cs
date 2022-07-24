@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ClassesExercise
 {
@@ -11,9 +12,24 @@ namespace ClassesExercise
             myCar.Model = "Sonata";
             myCar.Year = 2002;
 
-            Console.WriteLine($"Make: {myCar.Make}");
-            Console.WriteLine($"Model: {myCar.Model}");
-            Console.WriteLine($"Year: {myCar.Year}");
+            Car yourCar = new Car("Kia", "Forte", 2015);
+
+            Car herCar = new Car()
+            {
+                Make = "Toyota",
+                Model = "Camry",
+                Year = 2020
+            };
+
+            var carList = new List<Car>();
+            carList.Add(myCar);
+            carList.Add(yourCar);
+            carList.Add(herCar);
+            
+            foreach (var car in carList)
+            {
+                Console.WriteLine($"{car.Make} {car.Model} {car.Year}");
+            }
         }
     }
 }
